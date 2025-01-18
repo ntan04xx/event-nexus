@@ -2,6 +2,13 @@
     text-align: center;
   }
   
+  .Toolbar-header {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+  }
+
   .Home-header {
     background-color: yellow;
     min-height: 100vh;
@@ -11,4 +18,14 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+  }
+
+  .Home-link {
+    color: red
+  }
+
+  h1 {
+    font-size: 72px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: blue
   }

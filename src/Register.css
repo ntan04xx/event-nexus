@@ -2,7 +2,14 @@
     text-align: center;
   }
   
-  .Login-header {
+  .Toolbar-header {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+  }
+
+  .Register-header {
     background-color: yellow;
     min-height: 100vh;
     display: flex;
@@ -11,4 +18,8 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+  }
+
+  .Register-link {
+    color: red
   }

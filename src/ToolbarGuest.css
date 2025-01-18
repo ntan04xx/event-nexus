@@ -1,16 +1,17 @@
-.Toolbar_Guest {
+.ToolbarGuest {
     background-color: black;
-    color:yellow
 }
   
 .alignLeft {
 float: left;
 margin-left: 20px;
-margin-top: 30px
+margin-top: 30px;
+color: yellow
 }
 
 .alignRight {
 float: right;
 margin-right: 20px;
-margin-top: 30px
+margin-top: 30px;
+color: yellow;
 }

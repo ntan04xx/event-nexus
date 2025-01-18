@@ -12,3 +12,19 @@
     font-size: calc(10px + 2vmin);
     color: black;
   }
+
+  .Toolbar-header {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 8vh;
+  }
+
+  .Login-link {
+    color: red
+  }
+
+  h2 {
+    font-size: 40px;
+    color: blue;
+  }
