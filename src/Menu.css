@@ -1,0 +1,17 @@
+.Menu {
+    background-color: black;
+}
+  
+.alignTop {
+float: top;
+margin-left: 20px;
+margin-top: 80px;
+color: yellow
+}
+
+.alignBottom {
+float: right;
+margin-left: 20px;
+margin-bottom: 80px;
+color: yellow;
+}
