@@ -4,6 +4,7 @@ import Home from './Home.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import Event from './Event.js';
+import Menu from './Menu.js';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/Register" element={<Register />}></Route>
         <Route path="/Event" element={<Event />}></Route>
+        <Route path="/Menu" element={<Menu />}></Route>
       </Routes>
     </Router>
   );

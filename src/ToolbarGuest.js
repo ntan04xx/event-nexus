@@ -9,6 +9,7 @@ function ToolbarGuest() {
         {/*
           <Link to="/Menu class="alignLeft"> MENU </Link>
         */}
+            <Link to="/Menu" class="alignLeft">MENU</Link>
             <Link to="/Login" class="alignRight">LOGIN</Link>
             <Link to="/" class="alignRight">HOME</Link>
         </div>
