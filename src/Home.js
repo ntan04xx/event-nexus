@@ -1,12 +1,21 @@
 import './Home.css';
+import {useState} from "react";
 import {Link} from "react-router-dom";
-import ToolbarGuest from './ToolbarGuest';
+import ToolbarGuest from './components/ToolbarGuest';
+import Menu from './components/Menu';
 
-function Home() {
+const Home = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible((prev) => !prev);
+  };
+
   return (
     <div className="Home">
       <header className="Toolbar-header">
-        <ToolbarGuest/>
+        <ToolbarGuest toggleMenu={toggleMenu} />
+        <Menu isVisible={menuVisible} />
       </header>
 
       <header className="Home-header">

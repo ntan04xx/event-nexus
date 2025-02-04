@@ -1,6 +1,6 @@
 import './Register.css';
 import {Link} from "react-router-dom";
-import ToolbarGuest from './ToolbarGuest';
+import ToolbarGuest from './components/ToolbarGuest';
 
 function Register() {
   return (

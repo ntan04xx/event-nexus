@@ -1,7 +1,11 @@
 .ToolbarGuest {
     background-color: black;
 }
-  
+
+button {
+    background-color:black;
+}
+
 .alignLeft {
 float: left;
 margin-left: 20px;

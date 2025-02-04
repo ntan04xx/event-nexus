@@ -1,5 +1,5 @@
 import './Event.css';
-import ToolbarGuest from './ToolbarGuest';
+import ToolbarGuest from './components/ToolbarGuest';
 
 function Event() {
   return (

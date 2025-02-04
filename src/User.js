@@ -1,5 +1,5 @@
 import './User.css';
-import ToolbarGuest from './ToolbarGuest';
+import ToolbarGuest from './components/ToolbarGuest';
 
 function User() {
   return (

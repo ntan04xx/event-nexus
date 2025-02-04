@@ -1,6 +1,6 @@
 import './Notif.css';
-import React, { Component } from "react";
-import ToolbarGuest from './ToolbarGuest';
+import React from "react";
+import ToolbarGuest from './components/ToolbarGuest';
 import ToggleSwitch from './components/ToggleSwitch';
 
 function Notif() {
