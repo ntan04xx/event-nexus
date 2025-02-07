@@ -1,12 +1,21 @@
 import './Login.css';
 import {Link} from "react-router-dom";
 import ToolbarGuest from './components/ToolbarGuest';
+import {useState} from "react";
+import Menu from './components/Menu';
 
-function Login() {
+const Login = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible((prev) => !prev);
+  };
+
   return (
     <div className="Login">
       <header className="Toolbar-header">
-        <ToolbarGuest/>
+        <ToolbarGuest toggleMenu={toggleMenu} />
+        <Menu isVisible={menuVisible} />
       </header>
 
       <header className="Login-header">

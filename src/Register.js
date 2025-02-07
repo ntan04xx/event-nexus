@@ -1,12 +1,21 @@
 import './Register.css';
 import {Link} from "react-router-dom";
 import ToolbarGuest from './components/ToolbarGuest';
+import {useState} from "react";
+import Menu from './components/Menu';
 
-function Register() {
+const Register = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible((prev) => !prev);
+  };
+
   return (
     <div className="Register">
       <header className="Toolbar-header">
-        <ToolbarGuest/>
+        <ToolbarGuest toggleMenu={toggleMenu} />
+        <Menu isVisible={menuVisible} />
       </header>
 
       <header className="Register-header">

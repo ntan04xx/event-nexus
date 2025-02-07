@@ -1,11 +1,20 @@
 import './Event.css';
 import ToolbarGuest from './components/ToolbarGuest';
+import {useState} from "react";
+import Menu from './components/Menu';
 
-function Event() {
+const Event = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible((prev) => !prev);
+  };
+
   return (
     <div className="Event">
       <header className="Toolbar-header">
-        <ToolbarGuest/>
+        <ToolbarGuest toggleMenu={toggleMenu} />
+        <Menu isVisible={menuVisible} />
       </header>
 
       <header className="Event-header">

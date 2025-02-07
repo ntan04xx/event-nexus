@@ -9,6 +9,8 @@ const Menu = ({ isVisible }) => {
       <Link to="/Notif" className="alignTop"> Notifications </Link>
       <Link to="/User" className="alignTop"> Personal Details </Link>
       <Link to="/Event" className="alignTop"> Your Events </Link>
+
+      <p className='alignBottom'>© Eastern Sydney University 2025</p>
     </div>
   );
 }
