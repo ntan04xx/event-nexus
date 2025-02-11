@@ -1,16 +1,26 @@
 import './Notif.css';
 import React from "react";
 import ToolbarGuest from './components/ToolbarGuest';
-import ToggleSwitch from './components/ToggleSwitch';
 import {useState} from "react";
 import Menu from './components/Menu';
+import Switch from 'react-switch';
 
 const Notif = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [notifChecked, setNotifChecked] = useState(false);
+  const [eventChecked, setEventChecked] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible((prev) => !prev);
   };
+
+  const toggleNotifSwitch = (nextChecked) => {
+    setNotifChecked(nextChecked)
+  }
+
+  const toggleEventSwitch = (nextChecked) => {
+    setEventChecked(nextChecked)
+  }
 
   return (
     <div className="Notif">
@@ -21,13 +31,15 @@ const Notif = () => {
 
       <header className="Notif-header">
         <h2>Change Notifications Here</h2>
-        <React.Fragment>
-            <ToggleSwitch label= "All Notifications On?" />
-        </React.Fragment>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <label>All Notifications On? </label>
+          <Switch checked={notifChecked} onChange={toggleNotifSwitch} uncheckedIcon={false} checkedIcon={false} />
+        </div>
 
-        <React.Fragment>
-            <ToggleSwitch label= "Your Events Only?" />
-        </React.Fragment>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <label>Your Events Only? </label>
+          <Switch checked={eventChecked} onChange={toggleEventSwitch} uncheckedIcon={false} checkedIcon={false} />
+        </div>
       </header>
     </div>
   );

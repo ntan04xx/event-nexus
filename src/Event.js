@@ -18,14 +18,12 @@ const Event = () => {
       </header>
 
       <header className="Event-header">
-        <h2> Schedule Your Event </h2>
+        <h2> Schedule Your Event Here! </h2>
         <p>Event Name: </p>
         <p>Type: </p>
         <p>Time: </p>
 
-        <p>
-          Submit
-        </p>
+        <button className='Event-button'>Submit</button>
       </header>
     </div>
   );
