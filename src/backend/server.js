@@ -1,22 +1,37 @@
-require("dotenv").config()
-const mongoose = require("mongoose")
+require("dotenv").config();
+const mongoose = require("mongoose");
+const express = require("express");
 
-const connection_str = process.env.MONGO_URI
+const app = express();
+app.use(express.json());
+const portNumber = 3000;
 
+// Connecting to MongoDB
+const connection_str = process.env.NON_ENCODED;
 mongoose.connect(connection_str, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
+})
+.then(console.log("✅ Now connected to MongoDB"))
+.catch(err => console.error("❌ MongoDB connection error:", err));
+
+// Base route
+app.get("/", (req, res)=> {
+    res.send("📅 Event Nexus - Make Your Event Planning Easier Now!");
 });
 
-const db = mongoose.connection;
-db.on("connected", () => {
-    console.log("MongoDB connected successfully");
+// Importing other routes
+// const eventRoutes = require("./routes/eventRoutes");
+// app.use("/events", eventRoutes);
+
+// Starting server
+app.listen(portNumber, () => {
+    console.log(`👍🏻 Server now running on port ${portNumber}`)
 });
 
-db.on("error", (err) => {
-    console.error("MongoDB connection error:", err);
-});
-
-db.on("disconnected", () => {
-    console.log("MongoDB disconnected");
+process.on('SIGINT', () => {
+    mongoose.connection.close(() => {
+        console.log('Mongoose connection is disconnected due to application termination');
+        process.exit(0);
+    });
 });

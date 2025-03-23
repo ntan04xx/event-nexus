@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const eventsSchema = new mongoose.Schema({
     date: {type: Date, required: true, unique: false},
-    time: {type: Timestamp, required: true, unique: false},
     organiser: {
         type: mongoose.Schema.Types.UserId,
         ref: "User",
