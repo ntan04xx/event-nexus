@@ -21,8 +21,8 @@ app.get("/", (req, res)=> {
 });
 
 // Importing other routes
-// const eventRoutes = require("./routes/eventRoutes");
-// app.use("/events", eventRoutes);
+const userRoutes = require("./routes/userRoutes");
+app.use("/register", userRoutes);
 
 // Starting server
 app.listen(portNumber, () => {
