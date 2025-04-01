@@ -23,6 +23,7 @@ app.get("/", (req, res)=> {
 // Importing other routes
 const userRoutes = require("./routes/userRoutes");
 app.use("/register", userRoutes);
+app.use("/login", userRoutes);
 
 // Starting server
 app.listen(portNumber, () => {
