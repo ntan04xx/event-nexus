@@ -21,6 +21,7 @@ const Event = () => {
         <h2> Schedule Your Event Here! </h2>
         <p>Event Name: </p>
         <p>Type: </p>
+        <p>Date: </p>
         <p>Time: </p>
 
         <button className='Event-button'>Submit</button>
