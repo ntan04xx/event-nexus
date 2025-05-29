@@ -42,8 +42,10 @@ function Register() {
       </header>
 
       <header className="Register-header">
+        <p>Register your details here:</p>
         <form onSubmit={handleSubmit}>
           <input
+            className='form-field'
             type = "text"
             name = "username"
             placeholder='Username'
@@ -52,6 +54,7 @@ function Register() {
             required
           />
           <input
+            className='form-field'
             type = "text"
             name = "password"
             placeholder='Password'
@@ -60,6 +63,7 @@ function Register() {
             required
           />
           <input
+            className='form-field'
             type = "text"
             name = "firstname"
             placeholder='First Name'
@@ -68,6 +72,7 @@ function Register() {
             required
           />
           <input
+            className='form-field'
             type = "text"
             name = "lastname"
             placeholder='Last Name'
@@ -76,6 +81,7 @@ function Register() {
             required
           />
           <select
+            className='form-field'
             name="academicstatus"
             value={formData.academicstatus}
             onChange={handleChange}
@@ -94,7 +100,7 @@ function Register() {
             <option value="guest">Guest</option>
           </select>
 
-          <button type="submit">Register Now</button>
+          <button type="submit" className='Register-submit'>Register Now</button>
         </form>
 
         <p> 

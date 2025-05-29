@@ -40,14 +40,16 @@ const Event = () => {
         <h2> Schedule Your Event Here! </h2>
         <form onSubmit={handleSubmit}>
           <input
+            className = "form-field"
             type = "text"
             name = "name"
-            placeholder='Name'
+            placeholder='Event Name'
             value={formData.name}
             onChange={handleChange}
             required
           />
           <input
+            className = "form-field"
             type = "date"
             name = "date"
             placeholder='Date'
@@ -56,6 +58,7 @@ const Event = () => {
             required
           />
           <select
+            className = "form-field"
             name="eventType"
             value={formData.eventType}
             onChange={handleChange}
@@ -67,8 +70,9 @@ const Event = () => {
             <option value="extern">External Organisation</option>
             <option value="careers">Careers</option>
             <option value="dorm">Dormitory</option>
+            <option value="else">Other</option>
           </select>
-          <button type="submit">Add Event</button>
+          <button type="submit" className='Event-button'>Add Event</button>
         </form>
       </header>
     </div>

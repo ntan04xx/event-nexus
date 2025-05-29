@@ -20,7 +20,16 @@
     height: 8vh;
   }
 
+  .form-field {
+    margin-bottom: 12px;
+    display: block;
+  }
+
   .Login-link {
+    color: red
+  }
+
+  .Login-button {
     color: red
   }
 

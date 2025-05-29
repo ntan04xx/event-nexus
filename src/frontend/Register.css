@@ -20,6 +20,15 @@
     color: black;
   }
 
+  .form-field {
+    margin-bottom: 12px;
+    display: block;
+  }
+
   .Register-link {
+    color: red
+  }
+
+  .Register-submit {
     color: red
   }

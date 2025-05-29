@@ -2,15 +2,21 @@
     background-color: gray;
     position: fixed;
     bottom: 0;
-    width: 20vw;
-    height: 83.3vh;
-    font-size: 30px;
+    width: 12vw;
+    height: 82.8vh;
+    font-size: 18px;
     padding-top: 70px;
+}
+
+.Menu.small {
+    height: 78.6vh;
+    width: 14vw;
+    font-size: 13px;
 }
 
 .alignTop {
     margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 40px;
     color: white;
 
     display: flex;
@@ -21,8 +27,8 @@
 .alignBottom {
     margin-top: auto;
     margin-left: 3px;
-    padding-top: 320px;
-    font-size: 16px;
+    padding-top: 460px;
+    font-size: 12px;
     text-align: left;
     color: white;
 }

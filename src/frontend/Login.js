@@ -36,8 +36,10 @@ function Login() {
       </header>
 
       <header className="Login-header">
+        <p> Login Here: </p>
         <form onSubmit={handleSubmit}>
           <input
+            className='form-field'
             type = "text"
             name = "username"
             placeholder='Username'
@@ -46,6 +48,7 @@ function Login() {
             required
           />
           <input
+            className='form-field'
             type = "text"
             name = "password"
             placeholder='Password'
@@ -53,7 +56,7 @@ function Login() {
             onChange={handleChange}
             required
           />
-          <button type="submit">Login</button>
+          <button type="submit" className='Login-button'>Login</button>
         </form>
 
         <p>
