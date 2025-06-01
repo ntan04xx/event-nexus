@@ -9,14 +9,14 @@
 }
 
 .Menu.small {
-    height: 78.6vh;
+    height: 78.4vh;
     width: 14vw;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .alignTop {
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 50px;
     color: white;
 
     display: flex;
@@ -27,8 +27,13 @@
 .alignBottom {
     margin-top: auto;
     margin-left: 3px;
-    padding-top: 460px;
+    padding-top: 430px;
     font-size: 12px;
     text-align: left;
     color: white;
+}
+
+.alignBottom.small {
+    padding-top: 273px;
+    font-size: 10px;
 }
