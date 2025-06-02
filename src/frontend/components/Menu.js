@@ -7,14 +7,11 @@ const Menu = ({ isVisible }) => {
   const [isSmallWindow, setIsSmallWindow] = useState(() => window.innerWidth < threshold);
   useEffect(() => {
     const handleResize = () => {
-      const width = window.innerWidth;
-      console.log('Resized to', width);
-      setIsSmallWindow(window.innerWidth < threshold); // adjust threshold as needed
+      setIsSmallWindow(window.innerWidth < threshold);
     };
 
     window.addEventListener('resize', handleResize);
     handleResize();
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 

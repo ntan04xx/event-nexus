@@ -17,7 +17,7 @@ router.get('/', async(req, res) => {
 router.post("/add", async(req, res) => {
     try {
         const {name, date, eventType} = req.body;
-        const userID = req.session.userID;
+        const userID = req.session.userId;
         if (!name|| !date || !eventType) {
             return res.status(400).json({message: 'Please enter all details'});
         }
@@ -32,7 +32,7 @@ router.post("/add", async(req, res) => {
             return res.status(400).json({message: 'Event already exists'});
         }
 
-        const newEvent = new Event({date: date, type: eventType, organiser: userID});
+        const newEvent = new Event({name: name, date: date, type: eventType, organiser: userID});
         await newEvent.save();
         res.status(201).json({message: "New Event Added Succesfully"});
     } catch(e) {

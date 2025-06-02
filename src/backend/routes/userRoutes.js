@@ -23,7 +23,7 @@ router.post("/register", async(req, res) => {
 
         const newUser = new User({username: username, password: hashedPassword, firstname: firstname, lastname: lastname, dateJoin: firstjoin, academicStatus: academicstatus});
         await newUser.save();
-        req.session.userID = newUser._id; // replace with tokens later
+        req.session.userId = newUser._id; // replace with tokens later
         res.status(201).json({message: "New User Registered Succesfully"});
     } catch(e) {
         res.status(500).json({error: e.message});
@@ -54,6 +54,22 @@ router.get("/login", async(req, res) => {
     }
 });
 
-// add route that pulls up user profile to be shown on frontend (after events is made)
+// shows user profile
+router.post("/view", async(req, res) => {
+    try {
+        const userId = req.session.userId;
+        const user = await User.findbyId(userId);
+        if (!user) {
+            return res.status(401).json({message: 'User not found'});
+        }
+
+        const {username, firstname, lastname, dateJoin, academicStatus} = user;
+        const events = await Events.find({organiser: userId});
+        const eventNames = events.map(event => event.name);
+        res.json({username, firstname, lastname, dateJoin, academicStatus, eventNames}); // show on frontend
+    } catch(e) {
+        res.status(500).json({error: e.message});
+    }
+});
 
 module.exports = router;

@@ -15,6 +15,18 @@ mongoose.connect(connection_str, {
 .then(console.log("✅ Now connected to MongoDB"))
 .catch(err => console.error("❌ MongoDB connection error:", err));
 
+// Preparing session
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/ClusterNexus' }),
+  cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1 day
+}));
+
 // Base route
 app.get("/", (req, res)=> {
     res.send("📅 Event Nexus - Make Your Event Planning Easier Now!");
