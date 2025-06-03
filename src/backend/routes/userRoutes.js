@@ -55,7 +55,7 @@ router.get("/login", async(req, res) => {
 });
 
 // shows user profile
-router.post("/view", async(req, res) => {
+router.get("/view", async(req, res) => {
     try {
         const userId = req.session.userId;
         const user = await User.findbyId(userId);
@@ -65,8 +65,7 @@ router.post("/view", async(req, res) => {
 
         const {username, firstname, lastname, dateJoin, academicStatus} = user;
         const events = await Events.find({organiser: userId});
-        const eventNames = events.map(event => event.name);
-        res.json({username, firstname, lastname, dateJoin, academicStatus, eventNames}); // show on frontend
+        res.json({username, firstname, lastname, dateJoin, academicStatus, events}); // show on frontend
     } catch(e) {
         res.status(500).json({error: e.message});
     }

@@ -5,10 +5,18 @@ import Menu from './components/Menu';
 
 const User = () => {
   const [menuVisible, setMenuVisible] = useState(false);
-
   const toggleMenu = () => {
     setMenuVisible((prev) => !prev);
   };
+
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    fetch('/api/users/view', { credentials: 'include' })
+      .then(res => res.json())
+      .then(data => setUser(data))
+      .catch(err => console.error('Failed to load user data:', err));
+  }, []);
+  if (!user) return <p>Currently unavailable, please try again later.</p>;
 
   return (
     <div className="User">
@@ -19,12 +27,24 @@ const User = () => {
 
       <header className="User-header">
         <h2>Your Personal Details</h2>
-        <p>Username: </p>
-        <p>First Name: </p>
-        <p>Last Name: </p>
-        <p>First Joined: </p>
-        <p>Academic Status: </p>
+        <p>Username: {user.username} </p>
+        <p>First Name: {user.firstname} </p>
+        <p>Last Name: {user.lastname} </p>
+        <p>First Joined: {user.dateJoin} </p>
+        <p>Academic Status: {user.academicStatus} </p>
         <p>Your Events: </p>
+        {user.events && user.events.length > 0 ? (
+        <ul>
+          {user.events.map((event, index) => (
+            <li key={index}>
+              <p>Name: {event.name}</p>
+              <p>Date: {event.date}</p>
+            </li>
+          ))}
+        </ul>
+        ) : (
+          <p>No events yet made.</p>
+        )}
       </header>
     </div>
   );

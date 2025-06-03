@@ -36,6 +36,7 @@ app.get("/", (req, res)=> {
 const userRoutes = require("./routes/userRoutes");
 app.use("/register", userRoutes);
 app.use("/login", userRoutes);
+app.use("/view", userRoutes);
 
 // Starting server
 app.listen(portNumber, () => {
