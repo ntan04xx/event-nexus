@@ -40,4 +40,14 @@ router.post("/add", async(req, res) => {
     }
 });
 
+// lists all events
+router.get("/list", async(req,res) => {
+    try {
+        const events = await Event.find().limit(50);
+        res.json(events);
+    } catch(e) {
+        res.status(500).json({error: e.message});
+    }
+});
+
 module.exports = router;

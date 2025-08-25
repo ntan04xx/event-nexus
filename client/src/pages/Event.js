@@ -1,7 +1,7 @@
 import './Event.css';
-import ToolbarGuest from './components/ToolbarGuest';
+import ToolbarGuest from '../components/ToolbarGuest';
 import {useState} from "react";
-import Menu from './components/Menu';
+import Menu from '../components/Menu';
 import axios from "axios";
 
 const Event = () => {

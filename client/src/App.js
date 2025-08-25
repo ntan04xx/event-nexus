@@ -6,7 +6,7 @@ import Register from './Register.js';
 import Menu from './components/Menu.js';
 import Notif from './Notif.js';
 import User from './User.js';
-import Event from './Event.js';
+import Event from './pages/Event.js';
 
 function App() {
   return (

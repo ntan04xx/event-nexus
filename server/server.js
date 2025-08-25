@@ -38,6 +38,10 @@ app.use("/register", userRoutes);
 app.use("/login", userRoutes);
 app.use("/view", userRoutes);
 
+const eventRoutes = require("./routes/eventRoutes");
+app.use("/add", eventRoutes);
+app.use("/list", eventRoutes);
+
 // Starting server
 app.listen(portNumber, () => {
     console.log(`👍🏻 Server now running on port ${portNumber}`)
